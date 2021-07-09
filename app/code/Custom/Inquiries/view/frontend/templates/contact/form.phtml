@@ -1,0 +1,165 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \Magento\Contact\Block\ContactForm $block */
+?>
+<form class="form contact"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      id="general-enquiry-form"
+      method="post"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+
+    <fieldset class="fieldset">
+        <div class="field name required">
+            <!-- <label class="label" for="fullname"><span><?= $block->escapeHtml(__('Name')) ?></span></label> -->
+            <div class="control">
+                <input name="fullname" id="fullname" title="<?= $block->escapeHtmlAttr(__('Name')) ?>"
+                       placeholder = "<?= $block->escapeHtmlAttr(__('Name')) ?>" 
+                       value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('fullname') ?: $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>"
+                       class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+
+        <div class="field company required">
+            <!-- <label class="label"
+                   for="company"><span><?= $block->escapeHtml(__('Business / Company Name')) ?></span></label> -->
+            <div class="control">
+                <input name="company" id="company" title="<?= $block->escapeHtmlAttr(__('Business / Company Name')) ?>"
+                       placeholder = "<?= $block->escapeHtmlAttr(__('Business / Company Name')) ?>"
+                       value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('company') ?: $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>"
+                       class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+
+        <div class="field position">
+            <!-- <label class="label"
+                   for="company"><span><?= $block->escapeHtml(__('position')) ?></span></label> -->
+            <div class="control">
+                <input name="position" id="position" title="<?= $block->escapeHtmlAttr(__('Position')) ?>"
+                       placeholder = "<?= $block->escapeHtmlAttr(__('Position')) ?>"
+                       value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('position') ?: $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>"
+                       class="input-text" type="text"/>
+            </div>
+        </div>
+
+        <div class="field address">
+            <!-- <label class="label"
+                   for="company"><span><?= $block->escapeHtml(__('Address')) ?></span></label> -->
+            <div class="control">
+                <input name="address" id="address" title="<?= $block->escapeHtmlAttr(__('Address')) ?>"
+                       placeholder = "<?= $block->escapeHtmlAttr(__('Address')) ?>"
+                       value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('address') ?: $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>"
+                       class="input-text" type="text"/>
+            </div>
+        </div>
+
+        <div class="field telephone">
+            <!-- <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Phone No.')) ?></span></label> -->
+            <div class="control">
+                <input name="telephone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone No.')) ?>"
+                       placeholder = "<?= $block->escapeHtmlAttr(__('Phone No.')) ?>"
+                       value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('telephone')) ?>"
+                       class="input-text" type="text" data-validate="{'validate-number':true}"/>
+            </div>
+        </div>
+
+        <div class="field mobile required">
+            <!-- <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Mobile No.')) ?></span></label> -->
+            <div class="control">
+                <input name="mobile" id="mobile" title="<?= $block->escapeHtmlAttr(__('Mobile No.')) ?>"
+                       placeholder = "<?= $block->escapeHtmlAttr(__('Mobile No.')) ?>"
+                       value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('mobile')) ?>"
+                       class="input-text" type="text" data-validate="{required:true,'validate-number':true}"/>
+            </div>
+        </div>
+
+        <div class="field fax">
+            <!-- <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Fax No.')) ?></span></label> -->
+            <div class="control">
+                <input name="fax" id="fax" title="<?= $block->escapeHtmlAttr(__('Fax No.')) ?>"
+                       placeholder = "<?= $block->escapeHtmlAttr(__('Fax No.')) ?>"
+                       value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('fax')) ?>"
+                       class="input-text" type="text" data-validate="{'validate-number':true}"/>
+            </div>
+        </div>
+
+        <div class="field email required">
+            <!-- <label class="label" for="email"><span><?= $block->escapeHtml(__('E-mail address')) ?></span></label> -->
+            <div class="control">
+                <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('E-mail address')) ?>"
+                       placeholder = "<?= $block->escapeHtmlAttr(__('E-mail address')) ?>"
+                       value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ?: $this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>"
+                       class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+
+        <div class="field find-us">
+        <div class="control">
+            <select name="find_us" id="find_us" title="<?= $block->escapeHtmlAttr(__('How did you find us?')) ?>">
+                <option  value="Google Search">Google Search</option>
+                <option  value="Google Advertising">Google Advertising</option>
+                <option  value="Print Media">Print Media</option>
+                <option  value="Referral">Referral</option>
+                <option  value="Yellow Pages Print">Yellow Pages Print</option>
+                <option  value="Yellow Pages Online">Yellow Pages Online</option>
+                <option  value="Trade Magazine">Trade Magazine</option>
+                <option  value="Other">Other</option>
+            </select>
+            </div>   
+        </div>
+        <div class="field your-industry">
+        <div class="control">
+            <select name="your_industry" id="your_industry" title="<?= $block->escapeHtmlAttr(__('Your Industry')) ?>">
+                <option  value="Food Processing & Growers">Food Processing & Growers</option>
+                <option  value="Health Care & Veterinary">Health Care & Veterinary</option>
+                <option  value="Laboratory & R&D">Laboratory & R&D</option>
+                <option  value="Manufacturing & Industrial">Manufacturing & Industrial</option>
+                <option  value="Retail & Hospitality">Retail & Hospitality</option>
+                <option  value="Warehousing & Logistics">Warehousing & Logistics</option>
+                <option  value="Other">Other</option>
+            </select>
+            </div>   
+        </div>
+        <div class="field comment required">
+            <!-- <label class="label"
+                   for="comment"><span><?= $block->escapeHtml(__('Your Enquiry')) ?></span></label> -->
+            <div class="control">
+                <textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('Your Enquiry')) ?>"
+                          placeholder = "<?= $block->escapeHtmlAttr(__('Your Enquiry')) ?>"
+                          class="input-text" cols="5" rows="3"
+                          data-validate="{required:true}"><?= $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('comment')) ?></textarea>
+            </div>
+        </div>
+
+
+        <input name="store_name" id="store_name" title="<?= $block->escapeHtmlAttr(__('Store')) ?>"
+               placeholder="<?= $block->escapeHtmlAttr(__('Store')) ?>"
+               value="AbleScale"
+               class="input-text" type="hidden"/>
+        <input name="form" id="form" title="<?= $block->escapeHtmlAttr(__('Form')) ?>"
+               placeholder="<?= $block->escapeHtmlAttr(__('Form')) ?>"
+               value="General Enquiry Form"
+               class="input-text" type="hidden"/>
+        <input name="enquiry_from" id="enquiry_from" title="<?= $block->escapeHtmlAttr(__('Enquiry From')) ?>"
+               placeholder="<?= $block->escapeHtmlAttr(__('Enquiry From')) ?>"
+               value="<?= $this->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]) ?>"
+               class="input-text" type="hidden"/>
+
+    </fieldset>
+
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value=""/>
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Submit')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+

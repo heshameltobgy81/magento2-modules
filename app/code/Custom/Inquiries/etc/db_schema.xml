@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="inquiries_contacts" resource="default" engine="innodb" comment="Contact request">
+        <column xsi:type="smallint" name="contact_id" padding="11" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="25" comment="Full Name"/>
+        <column xsi:type="varchar" name="company" nullable="false" length="64" comment="Company/Organization"/>
+        <column xsi:type="varchar" name="email" nullable="false" length="30" comment="E-mail address"/>
+        <column xsi:type="varchar" name="find_us" nullable="false" length="100" comment="How did you find us?"/>
+        <column xsi:type="varchar" name="your_industry" nullable="false" length="50" comment="Your Industry"/>
+        <column xsi:type="varchar" name="telephone" nullable="false" length="20" comment="Phone"/>
+        <column xsi:type="varchar" name="mobile" nullable="false" length="20" comment="mobile"/>
+        <column xsi:type="varchar" name="fax" nullable="false" length="20" comment="fax"/>
+        <column xsi:type="varchar" name="subject" nullable="false" length="30" comment="Subject"/>
+        <column xsi:type="varchar" name="position" nullable="false" length="30" comment="Position"/>
+        <column xsi:type="varchar" name="address" nullable="false" length="30" comment="Address"/>
+        <column xsi:type="varchar" name="store" nullable="false" length="50" comment="Store"/>
+        <column xsi:type="varchar" name="form" nullable="false" length="200" comment="Form"/>
+        <column xsi:type="varchar" name="enquiry_from" nullable="false" length="260" comment="Enquiry From"/>
+        <column xsi:type="varchar" name="added_date" nullable="false" comment="Create at"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="contact_id"/>
+        </constraint>
+    </table>
+</schema>

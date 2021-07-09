@@ -1,0 +1,26 @@
+{
+    "inquiries_contacts": {
+        "column": {
+            "contact_id": true,
+            "name": true,
+            "company": true,
+            "telephone": true,
+            "mobile": true,
+            "fax" : true,
+            "position": true,
+            "address" : true,
+            "email": true,
+            "find_us": true,
+            "your_industry": true,
+            "store": true,
+            "form": true,
+            "subject": true,
+            "message": true,
+            "added_date": true,
+            "enquiry_from": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

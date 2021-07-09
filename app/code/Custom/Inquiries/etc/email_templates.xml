@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="customer_thankyou_template_inquiry" label="Customer Thankyou Template Inquiry" file="thankyou_inquiry.html" type="html" module="Custom_Inquiries" area="frontend"/>
+    <template id="landing_customer_thankyou_template_inquiry" label="Landing Customer Thankyou Template Inquiry" file="landing_thankyou_inquiry.html" type="html" module="Custom_Inquiries" area="frontend"/>
+    <template id="admin_data_template_inquiry" label="Admin Detail Template Inquiry" file="admin_detail_form_inquiry.html" type="html" module="Custom_Inquiries" area="frontend"/>
+</config>
