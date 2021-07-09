@@ -1,0 +1,7 @@
+{
+    "newsletter_subscriber": {
+        "column": {
+            "c_fullname": true
+        }
+    }
+}
