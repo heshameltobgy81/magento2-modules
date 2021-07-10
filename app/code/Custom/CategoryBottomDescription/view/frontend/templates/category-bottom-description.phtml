@@ -1,0 +1,22 @@
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<?php if ($_categoryBottomDescription = $block->getCurrentCategory()->getCategoryBottomDescription()): ?>
+    <div class="category-bottom-description toggle-more">
+        <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_categoryBottomDescription, 'category_bottom_description') ?>
+    </div>
+<?php endif; ?>
+
+<script type="text/x-magento-init">
+{
+    ".category-bottom-description":{
+       "toggleShowMoreLess":{
+            "contentMaxHeight": 100
+        }
+    }
+}
+</script>

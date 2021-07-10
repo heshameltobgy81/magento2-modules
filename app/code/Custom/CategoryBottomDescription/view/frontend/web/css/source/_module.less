@@ -1,0 +1,65 @@
+//
+//  Module variables
+//  _____________________________________________
+@readmore_btn_color: #d60000;
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .category-bottom-description {
+        max-height: none;
+        position: relative;
+        max-height: none;
+        &.collapsed {
+        overflow: hidden;
+        }
+    }
+    
+    #toggle-bottom-description {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        color: @readmore_btn_color;
+        font-weight: 500;
+    }
+    .toggle-more {
+        overflow: hidden;
+    }
+
+}
+
+// Desktop
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .category-bottom-description {
+        &.collapsed {
+        max-height: 120px;
+        }
+    }
+    .category-bottom-description {
+        margin-bottom: 40px;
+    }
+    .toggle-more {
+        max-height: 120px;
+    }
+}
+
+// Mobile
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .category-bottom-description {
+        &.collapsed {
+        max-height: 135px;
+        }
+    }
+    .category-bottom-description {
+        margin-bottom: 20px;
+    }
+    .toggle-more {
+        max-height: 135px;
+    }
+}
