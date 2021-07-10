@@ -307,7 +307,7 @@ class Post extends Action
             $this->messageManager->addSuccessMessage(
                 __('Thank you for your submission, we will be in contact soon.')
             );
-            return $this->resultRedirectFactory->create()->setPath('thankyou');
+            return $this->resultRedirectFactory->create()->setPath($this->_redirect->getRefererUrl());
         } catch (Exception $e) {
             if ($this->getRequest()->isXmlHttpRequest()) {
                 return $result->setData(['message' => 'We can\'t process your request right now. Sorry, that\'s all we know.', 'error' => true]);
