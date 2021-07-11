@@ -1,0 +1,27 @@
+<div id="carousel-container" class="owl-carousel owl-theme">
+<div class="slider-item">
+<div class="slider-content">
+<div><img src="<?= $block->getViewFileUrl('Custom_CmsPage::images/Eltobgy-17_1200x400_1.jpg') ?>" alt="my first banner"/></div>
+</div>
+</div>
+<div class="slider-item">
+<div class="slider-content">
+<div><img src="<?= $block->getViewFileUrl('Custom_CmsPage::images/Eltobgy-17_1200x400_2.jpg') ?>" alt="my second banner"/></div>
+</div>
+</div>
+</div>
+
+<script>
+require(['jquery', 'owl'], function($) {
+    $(document).ready(function() {
+        $('#carousel-container').owlCarousel({
+            items : 1,
+            loop: true,
+            nav: true,
+            autoplay: true,
+            dots: true
+
+        })
+    })
+});
+</script>
