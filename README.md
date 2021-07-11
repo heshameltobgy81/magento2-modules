@@ -1,5 +1,5 @@
 # magento2-modules
-## Intructions
+## Instructions
 ***This project consists of the below 5 modules:***
 1. Custom_AddToCart
 2. Custom_CategoryBottomDescription
