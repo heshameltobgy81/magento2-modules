@@ -11,7 +11,7 @@ In order to upload the above modules, you need to go to your Magento root direct
 
 Please use the command line to run the below command if you would like to install all the above modules:
 
-You can use either of the below ways to enable the above module on a Magento project:
+You can use any of the below ways to enable the above module on a Magento project:
 ```
 php bin/magento module:status --disabled | grep custom -i | xargs php bin/magento module:enable
 ```
